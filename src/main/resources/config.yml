@@ -1,0 +1,129 @@
+
+# ╔══════════════════════════════════════════════════════════════╗
+# ║              TROTESLIMAT  •  v2.0  •  by TroJan_real        ║
+# ║    Config sürümünü silme veya değiştirme — otomatik kullanılır ║
+# ╚══════════════════════════════════════════════════════════════╝
+config-version: 2
+
+# ─── TESLİMAT AYARLARI ────────────────────────────────────────────────────────
+weekly-item:
+  # Oyuncuların her hafta teslim edeceği Minecraft malzeme adı (büyük harf)
+  material: "DIAMOND"
+  # Kaç adet = 1 teslimat sayılır
+  amount-per-delivery: 64
+
+# ─── ÖDÜL AYARLARI ────────────────────────────────────────────────────────────
+# Hafta sonunda her sıra için çalıştırılacak komutlar.
+# Kullanılabilir placeholder'lar: %player% → oyuncu adı | %place% → sıra numarası
+rewards:
+  1:
+    commands:
+      - "eco give %player% 15000"
+      - "give %player% netherite_block 16"
+      - "broadcast &6&l🏆 &e%player% &fbu hafta 1. oldu!"
+  2:
+    commands:
+      - "eco give %player% 10000"
+      - "give %player% diamond_block 8"
+  3:
+    commands:
+      - "eco give %player% 7000"
+  4:
+    commands:
+      - "eco give %player% 5000"
+  5:
+    commands:
+      - "eco give %player% 3000"
+      - "give %player% gold_block 4"
+
+# ─── DISCORD AYARLARI ─────────────────────────────────────────────────────────
+discord:
+  # Discord entegrasyonunu aç/kapat
+  enabled: false
+
+  # ⚠️  GÜVENLİK UYARISI: Bot token'ını asla GitHub/paylaşılan repoya yükleme!
+  #     Üretim ortamında bu değeri doğrudan buraya yazma; bir ortam değişkeni
+  #     veya şifreli bir secret yönetim sistemi kullan.
+  token: "BOT_TOKENINI_BURAYA_YAZ"
+
+  # Sunucu (guild) ID — sunucu adına sağ tıkla → ID Kopyala
+  guild-id: "SUNUCU_ID"
+
+  # Embed'lerin ve haftalık sonuçların gönderileceği metin kanalı ID'si
+  channel-id: "KANAL_ID"
+
+  # Haftalık sonuçlar yayınlanırken @everyone etiketlensin mi?
+  mention-everyone: true
+
+  # ── CANLI SIRALIK EMBED (/teslimat slash komutu) ──────────────────────────
+  embed-anlik:
+    baslik: "📦 Bu Haftanın Teslimat Sıralaması"
+    # Renk (R, G, B — 0–255 arası)
+    renk-r: 114
+    renk-g: 137
+    renk-b: 218
+    alan-toplam-teslimat: "Toplam Teslimat"
+    alan-teslimat-yapan: "Teslimat Yapan"
+    # %sayi% → gerçek oyuncu sayısıyla değiştirilir
+    alan-teslimat-yapan-deger: "%sayi% oyuncu"
+    footer: "Troteslimat • Anlık Sıralama"
+    bos-mesaj: "📦 Bu hafta henüz teslimat yapılmamış!"
+    # Placeholders: %madalya% %sira% %oyuncu% %sayi%
+    satir-sablon: "%madalya% **%sira%.** **%oyuncu%** — %sayi% teslimat"
+
+  # ── HAFTALIK SONUÇ EMBED (hafta sıfırlanınca otomatik gönderilir) ──────────
+  embed-haftalik:
+    baslik: "🏆 Haftalık Teslimat Yarışması Sonuçları"
+    renk-r: 255
+    renk-g: 140
+    renk-b: 0
+    alan-katilimci: "Katılımcı"
+    alan-katilimci-deger: "%sayi% oyuncu"
+    # %tarih% → bugünün tarihi (örn. 2026-07-03)
+    footer: "Troteslimat • %tarih%"
+    satir-sablon: "%madalya% **%sira%.** **%oyuncu%** — %sayi% teslimat"
+
+# ─── SIFIRLAMA AYARLARI ───────────────────────────────────────────────────────
+reset:
+  # Sıfırlama günü (MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+  day: "SUNDAY"
+  # Sıfırlama saati (0–23)
+  hour: 23
+  # Sıfırlama dakikası (0–59)
+  minute: 59
+
+# ─── OYUN İÇİ MESAJLAR ────────────────────────────────────────────────────────
+# Renk kodu: & ile başlar (örn. &a = yeşil, &c = kırmızı, &e = sarı, &6 = altın)
+messages:
+  # Teslimat başarılı | %amount% %deliveries% %total%
+  deliver-success: "&a✔ &f%amount% &7adet teslim edildi! &a(+%deliveries% teslimat) &7| Toplam: &6%total%"
+
+  # Yetersiz eşya | %required% %has% %material%
+  deliver-not-enough: "&cYetersiz eşya! &f%required% &cadet %material% &cgerekli. &7(Elinde: &f%has%&7)"
+
+  # Envanterde hiç eşya yok | %material%
+  deliver-none: "&cEnvanterinde &f%material% &cbulunamadı."
+
+  # Admin: hafta sıfırlandı
+  admin-reset-done: "&a✔ Hafta sıfırlandı ve ödüller dağıtıldı!"
+
+  # Admin: config yeniden yüklendi
+  admin-reload-done: "&a✔ Config dosyası yeniden yüklendi!"
+
+  # Admin: henüz teslimat yok
+  admin-top-empty: "&7Henüz bu hafta teslimat yapılmamış."
+
+  # Yetkisiz erişim
+  no-permission: "&cBu komutu kullanmak için yetkin yok!"
+
+  # Alt komut yetkisi yok
+  no-permission-sub: "&cBu alt komut için yetkin yok!"
+
+  # Yalnızca oyuncular kullanabilir
+  players-only: "&cBu komutu sadece oyuncular kullanabilir!"
+
+  # Admin yardım başlığı
+  admin-help-header: "&8&m                    &r &6&lTroteslimat Admin &8&m                    "
+
+  # Admin top başlığı
+  admin-top-header: "&8&m         &r &6&l🏆 Haftalık Top 5 &8&m         "

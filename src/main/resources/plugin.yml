@@ -1,0 +1,60 @@
+name: Troteslimat
+version: 2.0
+main: com.trojan.troteslimat.Troteslimat
+api-version: 1.21
+author: TroJan_real
+description: Haftalık teslimat yarışı plugini
+
+commands:
+  teslimat:
+    description: Teslimat menüsünü açar
+    aliases: [deliver, trote, tc]
+    permission: troteslimat.use
+    permission-message: "&cBu komutu kullanmak için yetkin yok!"
+  topteslimat:
+    description: Haftalık teslimat sıralamasını GUI olarak gösterir
+    aliases: [topdeliver, toptc]
+    permission: troteslimat.use
+    permission-message: "&cBu komutu kullanmak için yetkin yok!"
+  troteadmin:
+    description: Troteslimat admin komutları
+    aliases: [tsadmin]
+    permission: troteslimat.admin
+    permission-message: "&cBu komutu kullanmak için yetkin yok!"
+
+permissions:
+  troteslimat.*:
+    description: Tüm Troteslimat izinleri
+    default: op
+    children:
+      troteslimat.use: true
+      troteslimat.admin: true
+
+  troteslimat.use:
+    description: Teslimat menüsünü ve sıralamayı açma izni
+    default: true
+
+  troteslimat.admin:
+    description: Tüm admin komutlarına erişim
+    default: op
+    children:
+      troteslimat.admin.setitem: true
+      troteslimat.admin.reset: true
+      troteslimat.admin.top: true
+      troteslimat.admin.reload: true
+
+  troteslimat.admin.setitem:
+    description: Haftalık eşyayı değiştirme izni
+    default: op
+
+  troteslimat.admin.reset:
+    description: Haftayı sıfırlama izni
+    default: op
+
+  troteslimat.admin.top:
+    description: Konsol/chat üzerinden sıralamayı görme izni
+    default: op
+
+  troteslimat.admin.reload:
+    description: Config dosyasını yeniden yükleme izni
+    default: op
