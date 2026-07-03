@@ -1,70 +1,78 @@
 # TroTeslimat
 
-**Haftalık Teslimat Yarışması** — Profesyonel Minecraft Sunucu Plugini
+**Haftalık Teslimat Yarışması** — Sunucunuzu canlandıracak profesyonel bir rekabet sistemi!
 
-Oyuncularınızın her hafta belirli bir eşyayı (örneğin elmas, netherite vs.) teslim ederek birbirleriyle rekabet ettiği, eğlenceli ve motive edici bir sistem.
+Oyuncular her hafta belirli bir eşyayı (örneğin elmas, netherite, shulker vs.) teslim ederek leaderboard'da yükseliyor. Hem eğlenceli hem de uzun vadeli oyuncu tutma sağlayan popüler bir sistem.
 
-### ✨ Özellikler
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21+-brightgreen)
+![Java](https://img.shields.io/badge/Java-21-blue)
+![License](https://img.shields.io/badge/License-GPLv3-red)
 
-- **Modern ve Kullanıcı Dostu GUI**  
-  Oyuncular 64, 128, 256, 512, 1024 adet veya "Tümünü Teslim Et" butonlarıyla kolayca teslimat yapabilir.
+### Neden TroTeslimat?
 
-- **Sayfalı Leaderboard GUI**  
-  Haftalık teslimat sıralamasını oyuncu kafalarıyla birlikte detaylı şekilde gösterir.
+Birçok sunucuda oyuncular zamanla sıkılır. **TroTeslimat** ile sunucunuza haftalık bir hedef ve rekabet ortamı katıyorsunuz. Oyuncular "Bu hafta ne kadar teslimat yapacağım?" diye motive oluyor.
+
+### ✨ Başlıca Özellikler
+
+- **Şık ve Kolay Kullanımlı Teslimat Arayüzü**  
+  Oyuncular tek tıkla 64, 128, 256, 512, 1024 adet veya tüm envanterlerindeki eşyayı teslim edebiliyor.
+
+- **Profesyonel Leaderboard**  
+  Sayfalı ve görsel olarak güzel bir Top Teslimat menüsü. Oyuncu kafalarıyla birlikte sıralama gösterimi.
 
 - **Discord Entegrasyonu**  
-  - `/teslimat` slash komutu ile anlık sıralama embed’i  
-  - Hafta sonunda otomatik @everyone’lu haftalık sonuç embed’i
+  - Discord’da `/teslimat` komutu ile anlık sıralama  
+  - Her hafta sonunda otomatik olarak @everyone ile haftalık sonuçları kanalınıza gönderir
 
-- **Gelişmiş Admin Sistemi**  
-  - `/troteadmin setitem` → Haftalık eşyayı değiştirmek için görsel arayüz  
-  - `/troteadmin reset` → Haftayı sıfırlayıp ödülleri dağıtma  
-  - `/troteadmin top` → Chat’te sıralama görme  
-  - `/troteadmin reload` → Config’i yeniden yükleme
+- **Güçlü Admin Kontrolü**  
+  - Haftalık eşyayı görsel arayüzden değiştirme  
+  - İstediğiniz zaman hafta sıfırlama ve ödül dağıtma  
+  - Mevcut sıralamayı chat’te görme  
+  - Config yeniden yükleme
 
-- **Tamamen Yapılandırılabilir**  
-  Haftalık eşya, ödül komutları, Discord ayarları, mesajlar, reset günü/saati tamamen config üzerinden kontrol edilir.
+- **Tamamen Özelleştirilebilir**  
+  Haftalık eşya, ödül komutları, Discord ayarları, mesajlar, reset günü ve saati tamamen config üzerinden kontrol edilir.
 
-- **Otomatik Haftalık Sıfırlama**  
-  İstediğiniz gün ve saatte (örneğin Pazar 23:59) otomatik olarak çalışır.
+- **Otomatik Sistem**  
+  Belirlediğiniz gün ve saatte (örneğin Pazar 23:59) sistem otomatik sıfırlanır ve ödüller dağıtılır.
 
-- **Performans Odaklı**  
-  Leaderboard cache sistemi ve optimize kod yapısı sayesinde büyük sunucularda da sorunsuz çalışır.
+- **Optimizasyon**  
+  Cache sistemi sayesinde çok sayıda oyuncu olsa bile akıcı çalışır.
 
 ### 📌 Desteklenen Sürümler
 - **Minecraft 1.21** ve üzeri
-- Spigot, Paper, Purpur ve Fork’larla uyumludur
+- Spigot, Paper, Purpur ve diğer 1.21+ tabanlı sunucularla tam uyumludur.
 
 ### ⚠️ Lisans ve Kullanım Koşulları
 
-Bu plugin **GNU General Public License v3.0 (GPLv3)** ile lisanslanmıştır.
+Bu plugin **GNU General Public License v3.0** ile lisanslanmıştır.
 
-**İzin Verilen:**
-- Plugini ücretsiz indirmek ve kendi sunucunuzda kullanmak
-- Config dosyasını kendi sunucunuza göre düzenlemek
+**İzin verilenler:**
+- Plugini ücretsiz olarak indirmek ve kendi sunucunuzda kullanmak
+- Config dosyasını kendi zevkinize göre düzenlemek
 
-**Kesinlikle Yasak:**
+**Kesinlikle yasak olanlar:**
 - Plugini kendi adınıza değiştirerek yayınlamak
-- Plugini satmak, ücretli paketlerde dağıtmak veya ticari amaçla kullanmak
-- "TroJan_real" authorship bilgisini kaldırmak
+- Plugini satmak, ücretli kaynaklarda paylaşmak veya ticari amaçla kullanmak
+- Geliştirici bilgisi olan "TroJan_real" kısmını kaldırmak
 
-İhlal durumunda yasal işlem başlatılacaktır.
+Her türlü ihlal yasal takibe tabidir.
 
 ### 📋 Komutlar
 
-| Komut              | Açıklama                              | Yetki                    |
-|--------------------|---------------------------------------|--------------------------|
-| `/teslimat`        | Teslimat menüsünü açar                | `troteslimat.use`        |
-| `/topteslimat`     | Haftalık top GUI’sini açar            | `troteslimat.use`        |
-| `/troteadmin`      | Admin komutlarını gösterir            | `troteslimat.admin`      |
+| Komut              | Açıklama                                   | Yetki                    |
+|--------------------|--------------------------------------------|--------------------------|
+| `/teslimat`        | Teslimat menüsünü açar                     | `troteslimat.use`        |
+| `/topteslimat`     | Haftalık sıralama GUI’sini açar            | `troteslimat.use`        |
+| `/troteadmin`      | Admin komutlarını kullanmanızı sağlar     | `troteslimat.admin`      |
 
 **Admin Alt Komutları:** `setitem`, `reset`, `top`, `reload`
 
-### 🚀 Kurulum
+### 🚀 Kurulum Adımları
 
-1. [Releases](https://github.com/TroJan-real/TroTeslimat/releases) sekmesinden en son sürümü indirin.
+1. [Releases](https://github.com/TroJan-real/TroTeslimat/releases) sayfasından en son sürümü indirin.
 2. İndirdiğiniz `.jar` dosyasını sunucunuzun `plugins` klasörüne atın.
-3. Sunucuyu başlatın.
+3. Sunucuyu bir kez başlatın.
 4. Oluşan `plugins/TroTeslimat/config.yml` dosyasını dikkatlice düzenleyin.
 5. Sunucuyu yeniden başlatın.
 
